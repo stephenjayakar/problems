@@ -1,0 +1,15 @@
+import sys
+
+
+    
+largest_sum = 0
+print(arr_t)    
+for i in range(4):
+    for j in range(4):
+        hourglass = [arr[i][j], arr[i][j + 1], arr[i][j + 2],
+                     arr[i + 1][j + 1],
+                     arr[i + 2][j], arr[i + 2][j + 1], arr[i + 2][j + 2]]
+        hourglass_sum = sum(hourglass)
+        if hourglass_sum > largest_sum:
+            largest_sum = sum
+print(hourglass_sum)
