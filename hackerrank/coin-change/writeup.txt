@@ -1,0 +1,21 @@
+;; Writeup of solving the problem
+
+C = set of all coin values
+m = how many elements in C
+n = the value we're trying to combine to
+
+  We can reuse coins as many times as we want, but can't repeated combinations ( like using 2 + 1 and 1 + 2)
+
+== DYNAMIC PROGRAMMING ==
+
+What's the subproblem?
+- P(v, mc) returns how many ways to make value v with max coin value mc
+- P(v, mc): -> sum(P(v - c, c) for c in C where c <= mc)
+- one problem: mc could be huge; change it to indexes of the sorted coins eventually
+
+Base cases?
+- P(0, x) where x > 0 is = 1
+- P(x, 0) = 0
+- P(0, 0) = 0
+
+Order of filling the matrix?
